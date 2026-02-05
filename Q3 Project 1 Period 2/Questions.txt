@@ -22,4 +22,3 @@ What question(s) did you generate that can be better (get to real answers or und
 - For QUESTION #10, I think it can be better generated to get more useful explanation and I think it should be a open ended question 
   because Mr. David can go through the text map output and input formating from the textbook or through a quick demo. 
   
-  
