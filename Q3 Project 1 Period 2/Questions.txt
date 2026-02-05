@@ -1,3 +1,25 @@
 Questions:
 
-Write as many questions as you can based on the project specs.
+1. What kind of data strutures will be used to any valid path using a queue? [O]
+2. Where are 3D arrays gonna be used? [O]
+3. How will I know at what parts of the code I will be using Java Stack and Queue data structures? [O]
+4. Since we are using rows and columns, we will be implementing 2D arrays along with 3D arrays? [O]
+5. What are the types of output formats? [O]
+6. How do we measure time for the entire search algorithm? [O]
+7. What kind of math knowledge is required to code the comman line arguemnets? 
+8. How will to struture the commnand line arguements? [O]
+9. To find the shortest path when the swith is set, do we use int values or boolean values? [C]
+10. What is the text map output format? [O]
+11. To check for illegal characters, can I use recursion since I will need to check for repeats? [C]
+12. How do you set a 10 second timeout for the project?
+13. How do you check for errors for the coordinates that don't fit inside the maze? [O]
+14. Should there be a lower bounded runtime for finding the time of the optimal path? [C]
+15. What kinds of command line arguments should be used to find a path that covers the least amount of blank spaces? [O]
+
+
+What question(s) did you generate that can be better (get to real answers or understanding) by rewording them to be open-ended or closed? 
+
+- For QUESTION #10, I think it can be better generated to get more useful explanation and I think it should be a open ended question 
+  because Mr. David can go through the text map output and input formating from the textbook or through a quick demo. 
+  
+  
