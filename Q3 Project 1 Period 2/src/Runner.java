@@ -1,73 +1,62 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Runner {
-	
-	public static String[][] mapArr;
-	private static int rows; 
-	private static int cols;
-	private static int nums;
 
-	public static void main(String[] args) {
-		readFile("hardMap2");
-		
-	}
-	
-	public static void readFile(String fileName) { //map based input file
-		try {
-			File file = new File(fileName);
-			Scanner scanner = new Scanner(file);
-			
-			rows = Integer.parseInt(scanner.next());
-			cols = Integer.parseInt(scanner.next());
-			nums = Integer.parseInt(scanner.next());
-			mapArr= new String[rows*nums][cols];
-			
-			String newRow = scanner.next();
+    static class Queue {
+        private int[] arr;
+        private int front, rear, size, capacity;
 
-			for(int r = 0; r <mapArr.length; r++) {
-				for(int c = 0; c < cols; c++) {
-					mapArr[r][c] = newRow.substring(c,c+1);
-					
-				}
-			}			
-			
-			System.out.println(Arrays.deepToString(mapArr));
-			scanner.close();
-		}
-		catch (FileNotFoundException e) {
-			System.out.println("File Not Found!");
-		}
-	}
-	
-	
-	public static void readCoorFile(String fileName) {//finished- coordinate based input file
-		try {
-			File file = new File(fileName);
-			Scanner scanner = new Scanner(file);
-			
-			rows = Integer.parseInt(scanner.next());
-			cols = Integer.parseInt(scanner.next());
-			nums = Integer.parseInt(scanner.next());
-			mapArr= new String[rows*nums][cols];
-			
-			String newRow = scanner.next();
+        public Queue(int capacity) {
+            this.capacity = capacity;
+            arr = new int[capacity];
+            front = 0;
+            size = 0;
+            rear = -1;
+        }
 
-			for(int r = 0; r <mapArr.length; r++) {
-				for(int c = 0; c < cols; c++) {
-					mapArr[r][c] = newRow.substring(c,c+1);
-					
-				}
-			}			
-			
-			System.out.println(Arrays.deepToString(mapArr));
-			scanner.close();
-		}
-		catch (FileNotFoundException e) {
-			System.out.println("File Not Found!");
-		}
-	}
+        public void enqueue(int value) {
+            if (size == capacity) {
+                System.out.println("Queue is full");
+                return;
+            }
+            rear = (rear + 1) % capacity;
+            arr[rear] = value;
+            size++;
+        }
 
+        public int dequeue() {
+          
+        	if (size == 0) {
+                System.out.println("Queue is empty");
+                return -1;
+            }
+            
+            
+            int removed = arr[front];
+            front = (front + 1) % capacity;
+            size--;
+            return removed;
+            
+        }
+
+        public int peek() {
+            if (size == 0) return -1;
+            return arr[front];
+        
+        }
+   
+    }
+
+    
+    public static void main(String[] args) {
+
+    	Queue q = new Queue(5);
+
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+
+        System.out.println(q.dequeue());
+        System.out.println(q.peek());
+    }
+    
 }
+
