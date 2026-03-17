@@ -42,7 +42,8 @@ public class Runner {
 		}
 	}
 	
-	public static void readCoorFile(String fileName) {// IN PROGESS= coordinate based input file
+	
+	public static void readCoorFile(String fileName) {//finished- coordinate based input file
 		try {
 			File file = new File(fileName);
 			Scanner scanner = new Scanner(file);
